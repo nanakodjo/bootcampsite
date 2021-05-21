@@ -50,12 +50,12 @@ function RenderCampsite({campsite}) {
 function CampsiteInfo(props){
   if (props.campsite) {
       return (
-        <div className="container">
-          <div className="row">
-            <RenderCampsite campsite ={props.campsite} />
-            <RenderComments comments = {props.campsite.comments} />
+          <div className="container">
+              <div className="row">
+                  <RenderCampsite campsite={props.campsite} />
+                  <RenderComments comments={props.comments} />
+              </div>
           </div>
-        </div>
       );
     }
     return <div />;
