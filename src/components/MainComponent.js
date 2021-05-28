@@ -29,13 +29,11 @@ class Main extends Component {
           <Home
               campsite={
                   this.state.campsites.filter(
-                      (campsite) => campsite.featured
-                  )[0]
+                      (campsite) => campsite.featured)[0]
               }
               promotion={
                   this.state.promotions.filter(
-                      (promotion) => promotion.featured
-                  )[0]
+                      (promotion) => promotion.featured)[0]
               }
               partner={
                   this.state.partners.filter((partner) => partner.featured)[0]
@@ -64,19 +62,11 @@ class Main extends Component {
             <Header />
             <Switch>
                 <Route path="/home" component={HomePage} />
-                <Route
-                    exact
-                    path="/directory"
-                    render={() => (
-                        <Directory campsites={this.state.campsites} />
-                    )}
-                />
-                <Route
-                    path="/directory/:campsiteId"
-                    component={CampsiteWithId}
-                />
+                <Route exact path="/directory" render={() => (<Directory campsites={this.state.campsites} />)} />
+                <Route path="/directory/:campsiteId" component={CampsiteWithId} />
                 <Route exact path="/contactus" component={Contact} />
-                <Route exact path="/aboutus" render={() => <About partners={this.state.partners}/>} />                <Redirect to="/home" />
+                <Route exact path="/aboutus" render={() => <About partners={this.state.partners}/>} />       
+				<Redirect to="/home" />
             </Switch>
             <Footer />
         </div>
